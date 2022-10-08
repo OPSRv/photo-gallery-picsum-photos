@@ -7,19 +7,32 @@ export const ModalWrapper = styled.div`
   position: fixed;
   top: 0;
   left: 0;
+  transform: translate(50%, 50%);
   display: grid;
   place-items: center;
+  place-content: center;
   transform: ${(props) => props.visible};
   opacity: ${(props) => props.opacity};
   pointer-events: ${(props) => props.pointer};
   transition: 0.5;
 `;
 export const ModalContent = styled.div`
-  img {
-    height: 100vh;
+  /* display: grid;
+  place-items: center; */
+  display: flex;
+  justify-content: center;
+  span {
+    display: block;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  span > img {
     transition: transform 0.3s linear;
-    transform: ${(props) => props.transform};
-    padding: 100px;
+    transform: ${(props) => props.transform}, translate(-50%, -50%);
+    top: 0;
+    left: 0;
     border-radius: 2px;
+    width: min(100%, 800px);
   }
 `;
